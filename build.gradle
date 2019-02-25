@@ -1,0 +1,35 @@
+plugins {
+    id 'eu.leontebbens.gradle.chromedriver-updater' version '1.6'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    seleniumVersion = '3.14.0'
+    fluentleniumVersion = '3.7.0'
+    assertjVersion = '3.11.1'
+    testcontainersVersion = '1.10.5'
+}
+
+dependencies {
+    compile "org.fluentlenium:fluentlenium-core:${fluentleniumVersion}"
+    compile "org.fluentlenium:fluentlenium-junit:${fluentleniumVersion}"
+//    Testcontainers match the version of the Dockerized browser to whichever version of Selenium is found on the classpath
+    testCompile "org.seleniumhq.selenium:selenium-remote-driver:${seleniumVersion}"
+    testCompile "org.seleniumhq.selenium:selenium-chrome-driver:${seleniumVersion}"
+//      We need the following dependency to have a container running browser 
+    testCompile "org.testcontainers:selenium:${testcontainersVersion}"
+//      Wee need to have logger as a compile dependency to log messages from docker-compose
+    testCompile "org.slf4j:slf4j-simple:1.7.25"
+}
+
+task fluentleniumTest(type: Test, dependsOn: updateChromedriver) {
+//      Specify WebDriver location to define path to chromedriver
+    systemProperty "webdriver.chrome.driver", "${updateChromedriver.driverLocation}"
+//      Sets the WebDriver type to use
+    systemProperty "fluentlenium.webDriver", "chrome"
+    systemProperty "selenium.version", "${seleniumVersion}"
+}
