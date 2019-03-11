@@ -1,7 +1,8 @@
 plugins {
     id 'eu.leontebbens.gradle.chromedriver-updater' version '1.6'
-    id 'java'
 }
+
+apply plugin: 'java' 
 
 repositories {
     mavenCentral()
@@ -11,7 +12,7 @@ ext {
     seleniumVersion = '3.14.0'
     fluentleniumVersion = '3.7.0'
     assertjVersion = '3.11.1'
-    testcontainersVersion = '1.10.5'
+    testcontainersVersion = '1.10.6'
 }
 
 dependencies {
