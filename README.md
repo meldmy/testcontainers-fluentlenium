@@ -1,5 +1,5 @@
 # Testcontainers integration with Fluentlenium framework
-Simple project with example how we can integrate [testcontainers](https://www.testcontainers.org/) Java library with [Fluentlenium](https://fluentlenium.com/) framework
+A simple project with an example of how we can integrate [testcontainers](https://www.testcontainers.org/) Java library with [Fluentlenium](https://fluentlenium.com/) framework
 
 ![aaa](https://github.com/meldmy/testcontainers-fluentlenium/raw/master/readme/testcontainers-fluentlenium-logo.png)
 
@@ -8,9 +8,36 @@ Simple project with example how we can integrate [testcontainers](https://www.te
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+What do you need to have already installed:
 
-Docker - please see [General Docker requirements](https://github.com/meldmy/testcontainers-fluentlenium/raw/master/readme/testcontainers-fluentlenium-logo.png)
 
-######	Gradle settings:
+Docker - please see [General Docker requirements](https://github.com/meldmy/testcontainers-fluentlenium/raw/master/readme/testcontainers-fluentlenium-logo.png)  
+Check your Docker version by as follows:
+```
+$ docker version
 
-[Nice image with such info](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjdsKvY9NfgAhVslIsKHfG1DMEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.slideshare.net%2Farhan%2Fgeecon-2017-testcontainers-integration-testing-without-the-hassle&psig=AOvVaw2L_gwDEngKfT1xk-D0AbwX&ust=1551219387976806)
+Client:
+Version:      1.8.0
+API version:  1.20
+Go version:   go1.4.2
+Git commit:   f5bae0a
+Built:        Tue Jun 23 17:56:00 UTC 2015
+OS/Arch:      linux/amd64
+
+Server:
+Version:      1.8.0
+API version:  1.20
+Go version:   go1.4.2
+Git commit:   f5bae0a
+Built:        Tue Jun 23 17:56:00 UTC 2015
+OS/Arch:      linux/amd64
+```
+## Running the tests
+
+Tests executed on a browser from a fixed, clean image.
+
+Use the following Gradle command to run Fluentlenium test on Testcontainers:
+
+```
+./gradlew fluentleniumTest
+```
