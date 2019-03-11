@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import static java.lang.Integer.parseInt;
 import static org.junit.Assert.assertTrue;
 
-@PageUrl("https://github.com/meldmy/fluentlenium-on-testcontainers")
+@PageUrl("https://github.com/meldmy/testcontainers-fluentlenium")
 public class GitHubRepositoryPage extends FluentPage {
     
     @FindBy(css = ".social-count")
