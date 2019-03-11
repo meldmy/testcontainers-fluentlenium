@@ -1,4 +1,5 @@
 plugins {
+    //Checks and downloads latest Selenium Chromedriver webdriver. Provide updateChromedriver task
     id 'eu.leontebbens.gradle.chromedriver-updater' version '1.6'
 }
 
