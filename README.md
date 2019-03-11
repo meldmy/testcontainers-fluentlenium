@@ -41,3 +41,8 @@ Use the following Gradle command to run Fluentlenium test on Testcontainers:
 ```
 ./gradlew fluentleniumTest
 ```
+
+## Gradle
+
+All dependencies in [build.gradle](/build.gradle) are described in comments. 
+Current project use [ChromeDriver Updater Plugin](https://github.com/leontebbens/chromedriver-updater-plugin/) for Gradle to keep your Chromedriver for Selenium up to date.
